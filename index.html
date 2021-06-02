@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+            Chuck Norris JSON
+        </title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <h1>
+            Chuck Norris
+        </h1>
+        <h3>
+            JSON time
+        </h3>
+        <div class="display">
+            <div class="loading-graphic" display="none">
+                loading quote...
+            </div>
+            <div id="quote">
+            </div>
+            <div id="categories" style="font-weight: 600;">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="input-group">
+                <label for="categ">
+                    Choose a category:
+                </label>
+            </div>
+
+            <button class="btn-generic" onclick="getQuoteCall()" id="new-quote-btn">
+                Fetch a different quote
+            </button>
+        </div>
+
+        <!-- JavaScript script -->
+        <script src="main.js"></script>
+    </body>
+</html>

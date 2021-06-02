@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    line-height: 1.5;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+select, option {
+    text-transform:capitalize;
+}
+
+.btn-generic {
+    background-color: #6A4C93;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Baloo Tammudu 2', cursive;
+    color: white;
+    font-size: medium;
+    width: 200px;
+    height: 40px;
+    align-content: center;
+}
+
+.btn-generic:active {
+    background-color: #462a6e;
+}
+
+.btn-generic:disabled {
+    background-color: #797979;
+}
+
+.display {
+    border-radius: 65% 35% 70% 30% / 52% 54% 46% 48% ;
+    background-color: #1982C4;
+    color: white;
+    height: 140px;
+    width: 400px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+#categories {
+    color: #FFCA3A;
+}
