@@ -5,13 +5,12 @@ var displayCategories = document.querySelector("#categories");
 var displayCategSelect = document.querySelector(".input-group");
 var btnNewQuote = document.querySelector("#new-quote-btn");
 var loadingGraphic = document.querySelector(".loading-graphic");
-
-var categ = 'random';
+var categorySelect;
 
 
 function getQuoteCall() {
-    var categorySelect = document.querySelector("#categ-select");
-    categ = categorySelect.value;
+    // categorySelect = document.querySelector("#categ-select");
+    var categ = categorySelect.value;
     console.log(categ);
     getData(categ);
 
@@ -41,15 +40,16 @@ function displayCategoriesSelect(json) {
     console.log('Categories data received.');
     console.log(json);
 
-    var selectInput = document.createElement("SELECT");
-    selectInput.tagName = 'categ';
-    selectInput.id = 'categ-select';
+    categorySelect = document.createElement("SELECT");
+    categorySelect.tagName = 'categ';
+    categorySelect.id = 'categ-select';
+    categorySelect.className = 'form-select';
 
     var option = document.createElement("OPTION");
     option.value = 'random';
     option.innerText = 'random';
 
-    selectInput.appendChild(option);
+    categorySelect.appendChild(option);
 
     var i = 0;
     while (i < json.length) {
@@ -59,13 +59,13 @@ function displayCategoriesSelect(json) {
         option.value = json[i];
         option.innerText = json[i];
 
-        selectInput.appendChild(option);
+        categorySelect.appendChild(option);
 
         i++;
     }
 
 
-    displayCategSelect.appendChild(selectInput);
+    displayCategSelect.appendChild(categorySelect);
 }
 
 
@@ -92,7 +92,7 @@ function getData(categ) {
 
 
 getCategory();
-getData(categ);
+getData('random');
 
 
 console.log('Script ended.');
