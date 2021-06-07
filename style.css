@@ -5,8 +5,8 @@
     align-items: center;
     align-content: center;
     line-height: 1.5;
-    font-family: 'Baloo Tammudu 2', cursive;
-    /* background-color: #1983c4c5; */
+    font-family: 'Lato', sans-serif;
+    background-color: #eef4ed;
     
 }
 
@@ -18,13 +18,23 @@ label {
     margin: 6px;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .title {
-    margin-top: 40px;
-    font-weight: 700;
-    font-size: 17vw;
-    color: #1982c4;
-    margin-bottom: -105px;
+    font-family: 'Limelight', cursive;
+    margin-top: 20%;
+    color: #8da9c4;
+    margin-bottom: -30px;
+    font-size: 90pt;
+}
+
+.subtitle {
+    font-size: 30pt;
+    color: #0b2545;
 }
 
 .controls {
@@ -33,32 +43,42 @@ label {
 }
 
 .btn-generic {
-    background-color: #8ac926;
+    background-color: #134074;
     border: none;
     border-radius: 5px;
-    font-family: 'Baloo Tammudu 2', cursive;
     color: white;
-    font-size: medium;
-    width: 200px;
+    font-weight: 600;
+    width: 220px;
     height: 40px;
-    padding-top: 4%;
     align-content: center;
     vertical-align: middle;
+    box-shadow: 3px 7px 8px -8px #13407460;
+    -webkit-box-shadow: 3px 7px 8px -8px #13407460;
+    -moz-box-shadow: 3px 7px 8px -8px #13407460;
+    transition: box-shadow 0.5s ease;
+}
+
+
+.btn-generic:hover{
+    box-shadow: 3px 7px 10px 1px #1340743a;
+    -webkit-box-shadow: 3px 7px 10px 1px #1340743a;
+    -moz-box-shadow: 3px 7px 10px 1px #1340743a;
+    transform: scale(1.01); 
+    transition: all 0.5s ease;
 }
 
 .btn-generic:active {
-    background-color: #6a991f;
+    background-color: #0b2545;
 }
 
 .btn-generic:disabled {
-    background-color: #a8a8a8;
+    background-color: #8da9c4;
 }
 
 .display {
     border-radius: 65% 35% 70% 30% / 52% 54% 46% 48% ;
-    border: 1px solid white;
-    background-color: #1982C4;
-    color: white;
+    border: 2px solid #8da9c4;
+    color: #0b2545;
     width: 40%;
     margin: 20px;
     padding: 65px;
@@ -73,7 +93,7 @@ label {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 
@@ -83,7 +103,8 @@ label {
 }
 
 #categories {
-    color: #FFCA3A;
+    color: #134074;
     text-transform:capitalize;
+    font-family: 'Limelight', cursive;
     padding-top: 20px;
 }

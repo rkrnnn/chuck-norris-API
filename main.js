@@ -3,9 +3,24 @@ console.log('main.js loadd');
 var displayQuote = document.querySelector("#quote");
 var displayCategories = document.querySelector("#categories");
 var displayCategSelect = document.querySelector(".input-group");
+var categorySelect = document.querySelector("#categ-select");
 var btnNewQuote = document.querySelector("#new-quote-btn");
 var loadingGraphic = document.querySelector(".loading-graphic");
 var categorySelect;
+
+
+function quoteLoading(val) {
+    if (val) {
+        btnNewQuote.disabled = true;
+        loadingGraphic.style.display = '';
+        displayQuote.innerText = '';
+        displayCategories.innerText = '';
+    }
+    else {
+        btnNewQuote.disabled = false;
+        loadingGraphic.style.display = 'none';
+    }
+}
 
 
 function getQuoteCall() {
@@ -14,18 +29,12 @@ function getQuoteCall() {
     console.log(categ);
     getData(categ);
 
-    btnNewQuote.disabled = true;
-    loadingGraphic.style.display = '';
-    displayQuote.innerText = '';
-    displayQuote.parentElement.style.backgroundColor = '#1982c4b3';
-    displayCategories.innerText = '';
+    quoteLoading(true);
 }
 
 
 function displayData(json) {
-    btnNewQuote.disabled = false;
-    loadingGraphic.style.display = 'none';
-    displayQuote.parentElement.style.backgroundColor = '#1982C4';
+    quoteLoading(false);
 
     console.log('Data received.');
     console.log(json);
@@ -39,11 +48,6 @@ function displayData(json) {
 function displayCategoriesSelect(json) {
     console.log('Categories data received.');
     console.log(json);
-
-    categorySelect = document.createElement("SELECT");
-    categorySelect.tagName = 'categ';
-    categorySelect.id = 'categ-select';
-    categorySelect.className = 'form-select';
 
     var option = document.createElement("OPTION");
     option.value = 'random';
@@ -63,9 +67,6 @@ function displayCategoriesSelect(json) {
 
         i++;
     }
-
-
-    displayCategSelect.appendChild(categorySelect);
 }
 
 
@@ -85,12 +86,13 @@ function getData(categ) {
     else {
         url = 'https://api.chucknorris.io/jokes/random?category=' + categ;
     }
+    quoteLoading(false);
     fetch(url)
     .then(response => response.json())
     .then(data => displayData(data))
 }
 
-
+quoteLoading(true);
 getCategory();
 getData('random');
 

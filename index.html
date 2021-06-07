@@ -8,16 +8,18 @@
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     </head>
     <body id="body" class="container-fluid">
-        <div >
+        <div class="header">
             <h1 class="title">
                 Chuck Norris
             </h1>
-            <h3>
+            <h3 class="subtitle">
                 JSON time
             </h3>
         </div>
@@ -35,6 +37,8 @@
                 <label for="categ">
                     Choose a category:
                 </label>
+                <select id="categ-select" class="form-select" name="categ">
+                </select>
             </div>
 
             <button class="btn-generic" onclick="getQuoteCall()" id="new-quote-btn">
